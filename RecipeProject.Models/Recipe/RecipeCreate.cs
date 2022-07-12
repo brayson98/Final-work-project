@@ -23,7 +23,7 @@ namespace RecipeProject.Models.Recipe
         [MaxLength(3000)]
         public string Ingredients { get; set; }
         public int? TimeToCook { get; set; }
-        public string? Description { get; set; }
+        
         public int? PhotoId { get; set; }
     }
 }
