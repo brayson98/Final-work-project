@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Dapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using RecipeProject.Models.Account;
 using System;
@@ -42,15 +43,32 @@ namespace RecipeProject.Repository
             {
                 await connection.OpenAsync(cancellationToken);
 
-                await connection
+                await connection.ExecuteAsync("Account_Insert",
+                    new { Account = dataTable.AsTableValuedParameter("dbo.AccountType") }, commandType: CommandType.StoredProcedure);
             }
+
+            return IdentityResult.Success;
 
         }
 
 
-        public Task<ApplicationUserIdentity> GetByUsernameAsync(string normalizedUsername, CancellationToken cancellationToken)
+        public async Task<ApplicationUserIdentity> GetByUsernameAsync(string normalizedUsername, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            cancellationToken.ThrowIfCancellationRequested();
+
+            ApplicationUserIdentity applicationUser;
+
+            using (var connection = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
+            {
+                await connection.OpenAsync(cancellationToken);
+
+                applicationUser = await connection.QuerySingleOrDefaultAsync<ApplicationUserIdentity>(
+                    "Account_GetByUsername", new { NormalizedUsername = normalizedUsername },
+                    commandType: CommandType.StoredProcedure
+                    );
+
+            }
+            return applicationUser;
         }
     }
 }
