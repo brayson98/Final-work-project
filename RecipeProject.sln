@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeProject.Models", "Rec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeProject.Repository", "RecipeProject.Repository\RecipeProject.Repository.csproj", "{EC7C53B0-104E-4F1A-B052-F3CEFE0AA3D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeProject.Identity", "RecipeProject.Identity\RecipeProject.Identity.csproj", "{03CF4F31-01A9-466C-B9A6-736E96F7E757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeProject.Services", "RecipeProject.Services\RecipeProject.Services.csproj", "{145220DF-F021-4C1A-B8A8-04D595DDC008}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{EC7C53B0-104E-4F1A-B052-F3CEFE0AA3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC7C53B0-104E-4F1A-B052-F3CEFE0AA3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC7C53B0-104E-4F1A-B052-F3CEFE0AA3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03CF4F31-01A9-466C-B9A6-736E96F7E757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03CF4F31-01A9-466C-B9A6-736E96F7E757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03CF4F31-01A9-466C-B9A6-736E96F7E757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03CF4F31-01A9-466C-B9A6-736E96F7E757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{145220DF-F021-4C1A-B8A8-04D595DDC008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{145220DF-F021-4C1A-B8A8-04D595DDC008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{145220DF-F021-4C1A-B8A8-04D595DDC008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{145220DF-F021-4C1A-B8A8-04D595DDC008}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
